@@ -32,7 +32,7 @@ npm install --save react-redux redux
 > *redux --> for creating store*<br>
 > *React Redux requires React 16.8.3 or later.*
 
- **Let's learn how to create our store**
+ **Let's learn how to create our first store**
  ``` javascript
  //importing createStore from redux
  import {createStore} from 'redux';
