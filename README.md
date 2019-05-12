@@ -53,7 +53,7 @@ npm install --save react-redux redux
       }
  }
  ```
- > *to dispatch or send an action,* 
+ *to dispatch or send an action,* 
  ``` javascript 
  store.dispatch(action )
  ```
