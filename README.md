@@ -28,7 +28,6 @@ Class MyClass extends React.Component {
 ### Installation 
 ``` terminal 
 npm install --save react-redux redux
-
 ```
 > *redux --> for creating store*<br>
 > *React Redux requires React 16.8.3 or later.*
