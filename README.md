@@ -89,7 +89,7 @@ npm install --save react-redux redux
     users:usersReducers
  });
  ```
- Now, we can pass this combine reducer(allReducers) to our store.
+ we can pass this combine reducers  to our store.
  ``` javascript
   const store = createStore(allReducers);
  ```
