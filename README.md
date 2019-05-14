@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/cococolacode/react-redux.svg?branch=master)](https://travis-ci.com/cococolacode/react-redux)
 
-### Getting Started
+## Getting Started
 To learn redux we must first understand what state is. <br>
  **_what is a state?_** <br>
 *The simple answer is, It's a place where the data comes from.*<br>
@@ -34,10 +34,9 @@ npm install --save react-redux redux
 
  **Let's learn how to create our first store**
  ``` javascript
- //importing createStore from redux
  import {createStore} from 'redux';
  
- function reducer(){
+ function reducer(){ //reducer 
  return 'this is a stae'
  }
  const store = createStore(reducer); //passing reducer function as a argument to createStore.
@@ -67,6 +66,46 @@ npm install --save react-redux redux
  ```
  _It should prints the action type and payload in console as below._<br>
  ![redux](https://user-images.githubusercontent.com/47861774/57584969-3e2c0480-7501-11e9-8770-a39dc0c4c996.png)
+ 
+ ### Combining ruducers
+ Let's combine a reducers into a single reducer to pass into our store.<br>
+ _Assume that, we got 2 reducers - productsReducer & usersReduser_
+ ``` javascript
+ //products reducer
+ const productsReducer = (state = [],action) => {
+   return state;
+ }
+ 
+ //users reducers
+ const usersReducer = (state = [],action) => {
+   return state;
+ }
+ ```
+ *combination*
+ ``` javascript
+ import {combineReducers} from 'redux'; //importing combineReducers from redux 
+ const allReducers = combineReducers({ 
+    products:productsReducers,
+    users:usersReducers
+ });
+ ```
+ Now, we can pass this combine reducer(allReducers) to our store.
+ ``` javascript
+  const store = createStore(allReducers);
+ ```
+ Now, our store looks a lot more like a real world store in an application that is prepared to scale.
+ 
+ ### Setting an initial state for the store
+ Some time we want to pre-populate our store with datas. For that, we normally pass our initial state as a second argument when creating a store.
+ ``` javascript
+    const store = createStore(allReducers,
+    {
+       products:[{name:'samsung galaxy J7 prime'}],
+       users:[{name:'bhupen'}]
+    });
+ ```
+ 
+
  
 
 
