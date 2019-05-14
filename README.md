@@ -61,9 +61,9 @@ npm install --save react-redux redux
  reducer have two parameters - _initial state of a reducer and the action_. It listens to every single action that is send.So, there needs to be figuring out what to do differently for each action. For now, let's just print our action.
 ```javascript
  reducer(state,action){
- console.log(action);
  return 'This is a state'
 }
+console.log(store.getState());
  ```
  _It should prints the action type and payload in console as below._<br>
  ![redux](https://user-images.githubusercontent.com/47861774/57584969-3e2c0480-7501-11e9-8770-a39dc0c4c996.png)
